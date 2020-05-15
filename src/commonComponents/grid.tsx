@@ -1,13 +1,13 @@
 import styled from "styled-components"
 // import * as React from "react"
 
-const media = {
-    xs: (styles: any) => `
-        @media only screen and (max-width: 480px) {
-            ${styles}
-        }
-    `
-}
+// const media = {
+//     xs: (styles: any) => `
+//         @media only screen and (max-width: 480px) {
+//             ${styles}
+//         }
+//     `
+// }
 export const Grid = styled.div``;
 export const Row = styled.div<{centered?: true}>`
     display: flex;
@@ -21,15 +21,22 @@ interface IColProps {
     dataCollapse? : string | "xs"
 }
 export const Col = styled.div<IColProps>`
-    width: ${
-        (props) => Math.floor(100 * (props.dataSize / 12)) -1
-    }%;
     display: block;
     padding: 5px;
-    ${
-        (props) => props.dataCollapse && media[props.dataCollapse](`
-            display: none
-        `)
+    width: 100%;
+    @media only screen and (max-width: 480px) {
+        width: 100%
+    }
+    @media only screen and (min-width: 576px) {
+        width: 100%
+    }
+    @media only screen and (min-width: 768px) {
+        width: 100%
+    }
+    @media only screen and (min-width: 992px) {
+        width: ${
+            (props) => Math.floor(100 * (props.dataSize / 12)) -1
+        }%;
     }
 `;
 

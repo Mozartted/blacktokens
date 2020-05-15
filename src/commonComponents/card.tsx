@@ -12,5 +12,9 @@ const Card = styled.div<{background: string}>`
    &:hover {
       transform: scale(1.05);
   }
+   &:focus {
+      outline: none;
+      transform: scale(1.05);
+  }
 `
 export default Card
