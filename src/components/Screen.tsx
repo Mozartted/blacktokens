@@ -1,6 +1,7 @@
 import {useLazyQuery} from '@apollo/react-hooks'
 import gql from "graphql-tag"
 import * as React from 'react';
+import {Button, Container} from "../commonComponents/grid"
 import List from "./List"
 import Search from "./Search"
 
@@ -33,6 +34,7 @@ const GET_COINS_BITS = gql`
       assetName
       assetSymbol
       currentSupply
+      assetType
       totalSupply
     }
   }
@@ -43,7 +45,7 @@ const Screen = () => {
 
     const [state, updateState] = React.useState({
         data: [],
-        limit: 90,
+        limit: 20,
         skip: 0
     })
 
@@ -61,7 +63,7 @@ const Screen = () => {
         updateState({
             ...state,
             data: result.assets,
-            limit: 90,
+            limit: 20,
             skip: 0,
         })
     }, onError: (e) =>{
@@ -81,8 +83,8 @@ const Screen = () => {
     const updateList = () => {
         updateState({
             ...state,
-            limit: state.limit + 90,
-            skip: state.skip + 90
+            limit: state.limit + 20,
+            skip: state.skip + 20
         })
         loadTokens({
             variables: {
@@ -113,23 +115,32 @@ const Screen = () => {
 
     return (
         <>
-            <Search onload={onLoad}/>
-          {
-            loading ? 
-              <div>Loading...</div> 
-            : 
-              <>
-                {/* {data.} */}
-                <List data={state.data}/>
-                <button onClick={updateList}>Get more tokens</button>
-              </>
-          }
-          {
-            error ? 
-              <div>{error}</div> 
-            : 
-              null
-          }
+            <Container className="margin-auto margin-top">
+                <div className="text-center">
+                    <img width="45" src={require('../../src/assets/img/Logo.png')} />
+                    <h1 className="futura-lt text-white large-display">
+                        BlackTokens
+                    </h1>
+                    <p className="futura-lt">a directory of crypto-tokens all over the world</p>
+                </div>
+                <Search onload={onLoad}/>
+                <>
+                    {/* {data.} */}
+                    <List data={state.data}/>
+                    {
+                        loading ? 
+                        <div>Loading...</div> 
+                        : 
+                        <Button onClick={updateList}>Get more tokens</Button>
+                    }
+                </>
+                {
+                    error ? 
+                    <div>{error}</div> 
+                    : 
+                    null
+                }
+            </Container>
         </>
     )
 }

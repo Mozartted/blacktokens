@@ -1,0 +1,74 @@
+.App {
+  text-align: center; 
+  font-family: "Futura LT", sans-serif;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px; }
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white; }
+
+.App-title {
+  font-size: 1.5em; }
+
+.App-intro {
+  font-size: large; }
+
+.container{
+  padding-left: auto;
+  padding-right: auto;
+  margin-top: 30px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.text-center{
+  text-align: center;
+}
+
+// FONT STYLING
+@font-face { 
+  font-family: 'Futura LT';
+  src: url('../../assets/Futura LT/FuturaLT.ttf');
+  font-weight: 500;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'Futura LT';
+  src: url('../../assets/Futura LT/FuturaLT-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal
+}
+
+@font-face {
+  font-family: 'Futura LT';
+  src: url('../../assets/Futura LT/FuturaLT-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal
+}
+
+.futura-lt{
+  font-family: "Futura LT";
+}
+
+.large-display{
+  font-size: 40px;
+}
+
+.margin-auto{
+  margin: auto;
+}
+
+.mt-2{
+  margin-top: 10px;
+}

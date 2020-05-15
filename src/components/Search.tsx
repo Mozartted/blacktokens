@@ -1,13 +1,17 @@
 import * as React from 'react';
+import Input from "../commonComponents/input"
 
 interface ISearchProps {
     onload: (e: any) => void
 }
 const Search : React.FC<ISearchProps> = ({onload}) => {
     return (
-        <>
-            <input type="text" onChange={onload} />
-        </>
+        <div className="container">
+            <div className="search-bar">
+                <Input type="text" onChange={onload} />
+                <div className="search" />
+            </div>
+        </div>
     )
 }
 

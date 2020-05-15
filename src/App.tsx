@@ -4,8 +4,8 @@ import ApolloClient from "apollo-client"
 import {ApolloLink , concat} from "apollo-link"
 import { createHttpLink } from 'apollo-link-http'
 import * as React from 'react';
-import './App.css';
 import Screen from './components/Screen';
+import './styles/css/app.css';
 
 // import logo from './logo.svg';
 

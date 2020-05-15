@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  background: #232323;
+  color: #ffffff;
+  padding: 0;
+  font-family: "Futura LT", sans-serif; }
+
+.row {
+  display: flex; }
