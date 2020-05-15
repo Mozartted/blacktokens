@@ -8,8 +8,8 @@ const Search : React.FC<ISearchProps> = ({onload}) => {
     return (
         <div className="container">
             <div className="search-bar">
-                <Input type="text" onChange={onload} />
-                <div className="search" placeholder="Search for tokens" />
+                <Input type="text" onChange={onload} placeholder="Search for tokens"/>
+                <div className="search"  />
             </div>
         </div>
     )
