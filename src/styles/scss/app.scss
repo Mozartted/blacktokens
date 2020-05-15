@@ -42,6 +42,12 @@
   font-weight: 500;
   font-style: normal
 }
+@font-face { 
+  font-family: 'Futura LT';
+  src: url('../../assets/Futura LT/FuturaLT-Light.ttf');
+  font-weight: 300;
+  font-style: normal
+}
 
 @font-face {
   font-family: 'Futura LT';
@@ -71,4 +77,10 @@
 
 .mt-2{
   margin-top: 10px;
+}
+
+.font-lighter{
+  font-weight: 300;
+  font-size: 12px;
+  margin-bottom: -1px;
 }

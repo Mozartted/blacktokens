@@ -12,6 +12,9 @@ const Input = styled.input`
     border: 0px;
     background: #4A4A4A;
     transition: ease-in-out 0.3s; 
+    &:focus{
+        outline: none;
+    }
     &:hover {
         transform: 
         height: 60px;
